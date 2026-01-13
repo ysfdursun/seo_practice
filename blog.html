@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Site Adı</title>
+    <meta name="description" content="Blog sayfası açıklaması">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Site Adı</div>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                <li><a href="hizmetler.html">Hizmetler</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Blog</h1>
+        </section>
+
+        <section class="blog-list">
+            <article class="blog-card">
+                <h2><a href="blog-post-1.html">Blog Yazısı Başlığı 1</a></h2>
+                <p class="meta">15 Ocak 2024 | Yazar Adı</p>
+                <p>Blog yazısı özeti buraya gelecek. Bu kısım yazının ilk birkaç cümlesini içerir...</p>
+                <a href="blog-post-1.html">Devamını Oku →</a>
+            </article>
+
+            <article class="blog-card">
+                <h2><a href="#">Blog Yazısı Başlığı 2</a></h2>
+                <p class="meta">10 Ocak 2024 | Yazar Adı</p>
+                <p>Blog yazısı özeti buraya gelecek. Bu kısım yazının ilk birkaç cümlesini içerir...</p>
+                <a href="#">Devamını Oku →</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Site Adı. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .blog-list {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .blog-card {
+            border-bottom: 1px solid #eee;
+            padding: 2rem 0;
+        }
+
+        .blog-card h2 a {
+            color: #1a1a2e;
+            text-decoration: none;
+        }
+
+        .blog-card h2 a:hover {
+            color: #4fc3f7;
+        }
+
+        .blog-card .meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.5rem 0 1rem;
+        }
+
+        .blog-card>a {
+            color: #1a1a2e;
+            font-weight: bold;
+        }
+    </style>
+</body>
+
+</html>
