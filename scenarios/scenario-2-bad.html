@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<!-- BAD PERFORMANCE: No lang, no viewport -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Images</title>
+
+    <!-- BAD PERFORMANCE: No preload hints -->
+    <!-- BAD PERFORMANCE: Large amounts of inline CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #f5f5f5;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <!-- BAD PERFORMANCE: Render-blocking external resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Görsel Galerisi</h1>
+        <h1>Image Gallery</h1>
+
+        <div class="gallery">
+            <!-- BAD PERFORMANCE: Large PNG images without optimization -->
+            <!-- BAD PERFORMANCE: No width/height (causes layout shift - CLS) -->
+            <!-- BAD PERFORMANCE: No lazy loading -->
+            <!-- BAD PERFORMANCE: No srcset for responsive images -->
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png">
+                <p>Image 1</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png">
+                <p>Image 2</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png">
+                <p>Image 3</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png">
+                <p>Image 4</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png">
+                <p>Image 5</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png">
+                <p>Image 6</p>
+            </div>
+
+            <!-- BAD PERFORMANCE: Off-screen images loaded eagerly -->
+            <div class="gallery-item">
+                <img src="../seo_banner.png" loading="eager">
+                <p>Image Below Fold 1</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png" loading="eager">
+                <p>Image Below Fold 2</p>
+            </div>
+
+            <div class="gallery-item">
+                <img src="../seo_banner.png" loading="eager">
+                <p>Image Below Fold 3</p>
+            </div>
+        </div>
+
+        <!-- BAD PERFORMANCE: Unoptimized background image -->
+        <div style="background-image: url('../seo_banner.png'); height: 400px; background-size: cover;">
+            <h2 style="color: white; padding: 20px;">Background Section</h2>
+        </div>
+    </div>
+
+    <!-- BAD PERFORMANCE: Large unminified JavaScript -->
+    <script>
+        // Unnecessary heavy computation on page load
+        function processImages() {
+            var images = document.querySelectorAll('img');
+            var data = [];
+
+            for (var i = 0; i < 10000; i++) {
+                data.push({
+                    index: i,
+                    random: Math.random(),
+                    sqrt: Math.sqrt(i),
+                    pow: Math.pow(i, 2)
+                });
+            }
+
+            images.forEach(function (img) {
+                img.addEventListener('load', function () {
+                    console.log('Image loaded');
+                });
+            });
+        }
+
+        processImages();
+    </script>
+</body>
+
+</html>

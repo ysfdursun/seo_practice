@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<!-- BAD: No lang attribute -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- BAD: No viewport - not mobile friendly -->
+
+    <title>Page</title>
+    <!-- BAD: No meta description, no canonical -->
+
+    <!-- BAD PERFORMANCE: Render-blocking CSS -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+    </style>
+
+    <!-- BAD PERFORMANCE: Synchronous JavaScript in head -->
+    <script>
+        // Blocking JavaScript
+        for (var i = 0; i < 50000; i++) {
+            Math.sqrt(i);
+        }
+    </script>
+
+    <!-- BAD: Multiple unused font weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=block"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- BAD SEO: Multiple H1 tags -->
+        <h1>Welcome</h1>
+        <h1>To Our Blog</h1>
+
+        <!-- BAD SEO: No semantic structure -->
+        <div>
+            <!-- BAD: Skipped heading levels H1 > H5 -->
+            <h5>Blog Post Title</h5>
+
+            <!-- BAD SEO: Thin content - not enough valuable text -->
+            <p>This is some text.</p>
+            <p>More text here.</p>
+
+            <!-- BAD SEO: Duplicate content simulation -->
+            <div>
+                <p>This is some text.</p>
+                <p>More text here.</p>
+            </div>
+
+            <!-- BAD SEO: Links with no descriptive text -->
+            <p>
+                <a href="page1.html">Click here</a> |
+                <a href="page2.html">Read more</a> |
+                <a href="page3.html">Link</a> |
+                <a href="#">Here</a>
+            </p>
+
+            <!-- BAD SEO: No alt text on images -->
+            <img src="../seo_banner.png">
+
+            <!-- BAD SEO: Keyword stuffing in visible content -->
+            <p>
+                SEO SEO optimization SEO services SEO expert best SEO company
+                SEO consultant SEO tips SEO guide SEO tutorial SEO course
+                SEO agency SEO marketing SEO tools SEO ranking SEO strategy
+            </p>
+
+            <!-- BAD SEO: Hidden text for search engines -->
+            <span style="display: none;">hidden keyword stuffing seo spam manipulation</span>
+            <div style="position: absolute; left: -9999px;">more hidden text for seo</div>
+
+            <!-- BAD SEO: No internal linking structure -->
+            <!-- BAD SEO: No breadcrumbs -->
+            <!-- BAD SEO: No structured data -->
+
+            <!-- BAD ACCESSIBILITY: No proper labels -->
+            <input type="text" placeholder="Search">
+            <button>Go</button>
+
+            <!-- BAD SEO: JavaScript-dependent navigation (not crawlable) -->
+            <a href="javascript:void(0)" onclick="loadPage('about')">About</a>
+            <a href="javascript:void(0)" onclick="loadPage('contact')">Contact</a>
+        </div>
+    </div>
+
+    <div style="margin-top: 20px; padding: 20px; background: #f5f5f5;">
+        <!-- BAD SEO: Generic footer with no value -->
+        <p>Footer</p>
+    </div>
+
+    <script>
+        function loadPage(page) {
+            console.log('Loading: ' + page);
+        }
+
+        // More unnecessary JavaScript
+        var unused = [];
+        for (var i = 0; i < 1000; i++) {
+            unused.push(Math.random());
+        }
+    </script>
+</body>
+
+</html>

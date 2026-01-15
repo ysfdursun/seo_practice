@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="tr">
+<!-- GOOD CWV: Proper language and accessibility -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ürünlerimiz | Hızlı ve Optimize Edilmiş Sayfa | SEO Learn</title>
+    <meta name="description"
+        content="En iyi ürünlerimizi keşfedin. Optimize edilmiş, hızlı yüklenen sayfa deneyimi ile alışverişin keyfini çıkarın.">
+
+    <link rel="canonical" href="https://example.com/scenarios/scenario-4-good.html">
+
+    <!-- GOOD LCP: Preload hero image for faster LCP -->
+    <link rel="preload" as="image" href="../SEO-BANNER.webp" type="image/webp" fetchpriority="high">
+
+    <!-- GOOD CWV: Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- GOOD CLS: Font-display swap prevents invisible text and reduces CLS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- GOOD CWV: Critical CSS inline (minimal) -->
+    <style>
+        /* Critical CSS - above the fold only */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f5f5f5;
+            line-height: 1.6
+        }
+
+        /* GOOD CLS: Reserved space for hero with aspect ratio */
+        .hero {
+            aspect-ratio: 16/9;
+            max-height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            contain: layout;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+        }
+
+        .hero h1 {
+            font-size: clamp(24px, 5vw, 48px);
+            margin-bottom: 16px
+        }
+
+        .hero p {
+            font-size: clamp(16px, 2.5vw, 24px);
+            margin-bottom: 24px
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px
+        }
+
+        /* GOOD CLS: Card with fixed image area */
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1)
+        }
+
+        .card-image {
+            aspect-ratio: 16/9;
+            overflow: hidden
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .card-content {
+            padding: 20px
+        }
+
+        .btn {
+            padding: 15px 30px;
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #5a6fd6
+        }
+
+        .btn:active {
+            transform: scale(0.98)
+        }
+
+        /* GOOD CLS: Reserved space for promotional banner */
+        .promo-space {
+            min-height: 150px;
+            background: #f0f0f0;
+            margin: 20px 0;
+            border-radius: 8px;
+            contain: layout
+        }
+
+        /* GOOD CLS: Reserved ad space with fixed dimensions */
+        .ad-space {
+            height: 250px;
+            background: #e0e0e0;
+            margin: 20px 0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            contain: layout
+        }
+    </style>
+
+    <!-- GOOD CWV: Non-critical CSS loaded async -->
+    <link rel="preload" href="../style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="../style.css">
+    </noscript>
+</head>
+
+<body>
+    <header style="background:#1a1a2e;padding:20px;">
+        <nav style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
+            <a href="/" style="color:white;font-size:24px;font-weight:700;text-decoration:none;">SEO Learn</a>
+            <ul style="display:flex;gap:20px;list-style:none;">
+                <li><a href="../index.html" style="color:white;text-decoration:none;">Ana Sayfa</a></li>
+                <li><a href="../hizmetler.html" style="color:white;text-decoration:none;">Hizmetler</a></li>
+                <li><a href="../iletisim.html" style="color:white;text-decoration:none;">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- GOOD LCP: Optimized hero with preloaded WebP image -->
+    <section class="hero" style="background-image: url('../SEO-BANNER.webp');">
+        <div class="hero-content">
+            <h1>Ürünlerimizi Keşfedin</h1>
+            <p>En iyi fiyatlarla kaliteli ürünler</p>
+            <!-- GOOD INP: Lightweight click handler -->
+            <button class="btn" id="get-started-btn">Başlayın</button>
+        </div>
+    </section>
+
+    <main class="container">
+        <h2 style="font-size:28px;margin-bottom:24px;">Ürünlerimiz</h2>
+
+        <section class="grid">
+            <!-- GOOD CLS: Images with explicit dimensions and aspect-ratio container -->
+            <article class="card">
+                <div class="card-image">
+                    <picture>
+                        <source srcset="../SEO-BANNER.webp" type="image/webp">
+                        <img src="../seo_banner.png" alt="Ürün 1 - SEO optimizasyon aracı" width="400" height="225"
+                            loading="eager" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3>Ürün 1</h3>
+                    <p>Profesyonel SEO aracı ile sitenizi optimize edin.</p>
+                    <button class="btn" data-product="1">Satın Al</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <picture>
+                        <source srcset="../SEO-BANNER.webp" type="image/webp">
+                        <img src="../seo_banner.png" alt="Ürün 2 - Keyword analiz aracı" width="400" height="225"
+                            loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3>Ürün 2</h3>
+                    <p>Keyword analiz aracı ile doğru kelimeleri bulun.</p>
+                    <button class="btn" data-product="2">Satın Al</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <picture>
+                        <source srcset="../SEO-BANNER.webp" type="image/webp">
+                        <img src="../seo_banner.png" alt="Ürün 3 - Backlink izleme aracı" width="400" height="225"
+                            loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3>Ürün 3</h3>
+                    <p>Backlink profilinizi takip edin ve geliştirin.</p>
+                    <button class="btn" data-product="3">Satın Al</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <picture>
+                        <source srcset="../SEO-BANNER.webp" type="image/webp">
+                        <img src="../seo_banner.png" alt="Ürün 4 - Rakip analiz aracı" width="400" height="225"
+                            loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3>Ürün 4</h3>
+                    <p>Rakiplerinizi analiz edin ve öne geçin.</p>
+                    <button class="btn" data-product="4">Satın Al</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <picture>
+                        <source srcset="../SEO-BANNER.webp" type="image/webp">
+                        <img src="../seo_banner.png" alt="Ürün 5 - İçerik optimizasyon aracı" width="400" height="225"
+                            loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3>Ürün 5</h3>
+                    <p>İçeriklerinizi SEO uyumlu hale getirin.</p>
+                    <button class="btn" data-product="5">Satın Al</button>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="card-image">
+                    <picture>
+                        <source srcset="../SEO-BANNER.webp" type="image/webp">
+                        <img src="../seo_banner.png" alt="Ürün 6 - Teknik SEO denetim aracı" width="400" height="225"
+                            loading="lazy" decoding="async">
+                    </picture>
+                </div>
+                <div class="card-content">
+                    <h3>Ürün 6</h3>
+                    <p>Teknik SEO sorunlarını tespit edin ve düzeltin.</p>
+                    <button class="btn" data-product="6">Satın Al</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- GOOD CLS: Reserved space for promotional content -->
+        <section class="promo-space" id="promo-banner" role="complementary" aria-label="Promosyon alanı">
+            <!-- Content will be loaded but space is reserved -->
+            <div style="padding:40px;text-align:center;">
+                <h2 style="color:#667eea;">🎉 Özel Teklif!</h2>
+                <p>Tüm ürünlerde %20 indirim - Kod: SEO2024</p>
+            </div>
+        </section>
+
+        <!-- GOOD CLS: Fixed size ad container -->
+        <aside class="ad-space" role="complementary" aria-label="Reklam alanı">
+            <p style="color:#666;">Reklam Alanı (250px yükseklik ayrılmış)</p>
+        </aside>
+    </main>
+
+    <footer style="background:#1a1a2e;color:white;padding:40px;text-align:center;">
+        <p>&copy; 2024 SEO Learn. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <!-- GOOD INP: Deferred, optimized JavaScript -->
+    <script defer>
+        // GOOD INP: Use event delegation for better performance
+        document.addEventListener('click', function (e) {
+            // Handle get started button
+            if (e.target.id === 'get-started-btn') {
+                // Lightweight handler - no heavy computation
+                console.log('Get started clicked');
+                window.location.href = '../hizmetler.html';
+            }
+
+            // Handle buy buttons with data attribute
+            if (e.target.matches('[data-product]')) {
+                const productId = e.target.dataset.product;
+                // Async, non-blocking action
+                console.log('Product ' + productId + ' selected');
+                // In real app: send to cart API asynchronously
+            }
+        });
+
+        // GOOD INP: Use requestIdleCallback for non-critical work
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(function () {
+                // Non-critical analytics or tracking
+                console.log('Page fully interactive');
+            });
+        }
+
+        // GOOD CWV: Optimized scroll handler with throttling
+        let ticking = false;
+        window.addEventListener('scroll', function () {
+            if (!ticking) {
+                window.requestAnimationFrame(function () {
+                    // Lightweight scroll handling
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true }); // Passive listener for better scroll performance
+    </script>
+</body>
+
+</html>

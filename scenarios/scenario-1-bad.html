@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<!-- BAD SEO: lang attribute missing -->
+
+<head>
+    <meta charset="UTF-8">
+    <!-- BAD SEO: viewport meta tag missing - mobile unfriendly -->
+    
+    <!-- BAD SEO: Generic, short title without keywords -->
+    <title>Page</title>
+    
+    <!-- BAD SEO: No meta description -->
+    <!-- BAD SEO: No canonical URL -->
+    <!-- BAD SEO: No Open Graph tags -->
+    
+    <!-- BAD SEO: Render-blocking CSS inline (large amount) -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial; line-height: 1.6; color: #333; background: #fff; }
+        .header { background: #1a1a2e; padding: 20px; }
+        .logo { color: white; font-size: 24px; }
+        .nav { display: flex; gap: 20px; }
+        .nav a { color: white; text-decoration: none; }
+        .hero { padding: 100px 20px; text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }
+        .content { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .card { background: #f5f5f5; padding: 20px; margin: 20px 0; border-radius: 8px; }
+        .footer { background: #1a1a2e; color: white; padding: 40px; text-align: center; }
+        /* Many more unnecessary repeated styles that could be external... */
+        .btn { padding: 10px 20px; background: #667eea; color: white; border: none; cursor: pointer; }
+        .btn:hover { background: #5a6fd6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .flex { display: flex; }
+        .text-center { text-align: center; }
+        .mb-20 { margin-bottom: 20px; }
+        .mt-20 { margin-top: 20px; }
+        .p-20 { padding: 20px; }
+    </style>
+    
+    <!-- BAD SEO: Render-blocking JavaScript in head -->
+    <script>
+        // Heavy synchronous JavaScript that blocks rendering
+        function heavyComputation() {
+            let result = 0;
+            for (let i = 0; i < 100000; i++) {
+                result += Math.sqrt(i);
+            }
+            return result;
+        }
+        heavyComputation();
+        
+        // More blocking code
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded');
+        });
+    </script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">My Site</div>
+        <div class="nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- BAD SEO: Multiple H1 tags -->
+    <div class="hero">
+        <h1>Welcome</h1>
+        <h1>To Our Site</h1>
+        <p>Some text here</p>
+    </div>
+
+    <div class="content">
+        <!-- BAD SEO: Skipped heading levels (H1 to H4 directly) -->
+        <h4>Our Services</h4>
+        
+        <div class="grid">
+            <div class="card">
+                <!-- BAD SEO: Image without alt text, width, height -->
+                <!-- BAD SEO: Large unoptimized PNG image -->
+                <img src="../seo_banner.png">
+                <!-- BAD SEO: Meaningless link text -->
+                <p>For more information <a href="#">click here</a></p>
+            </div>
+            
+            <div class="card">
+                <!-- BAD SEO: Empty alt attribute -->
+                <img src="../seo_banner.png" alt="">
+                <p>Learn more <a href="#">here</a></p>
+            </div>
+            
+            <div class="card">
+                <!-- BAD SEO: Non-descriptive alt text -->
+                <img src="../seo_banner.png" alt="image">
+                <p><a href="#">Read more</a></p>
+            </div>
+        </div>
+        
+        <!-- BAD SEO: Important content using non-semantic elements -->
+        <div class="mt-20">
+            <b>Important Article Title</b>
+            <div>This is the main content of the page but it's not properly structured 
+            with semantic HTML elements. Search engines have difficulty understanding 
+            the hierarchy and importance of this content.</div>
+        </div>
+        
+        <!-- BAD SEO: Keyword stuffing -->
+        <div class="card">
+            <p>SEO optimization SEO services SEO expert SEO company best SEO 
+            SEO consultant SEO agency SEO marketing SEO tools SEO ranking 
+            SEO tips SEO tricks SEO guide SEO tutorial SEO course SEO help</p>
+        </div>
+        
+        <!-- BAD SEO: Hidden text (manipulative technique) -->
+        <p style="color: white; font-size: 1px;">hidden keywords seo spam</p>
+        
+        <!-- BAD SEO: Links without proper attributes -->
+        <a href="https://external-site.com">External Link</a>
+        
+        <!-- BAD SEO: Broken internal links -->
+        <a href="nonexistent-page.html">Broken Link</a>
+    </div>
+
+    <div class="footer">
+        <!-- BAD SEO: No contact information, no semantic footer content -->
+        <p>Copyright 2024</p>
+    </div>
+    
+    <!-- BAD SEO: Large inline JavaScript at end -->
+    <script>
+        // Lots of unnecessary JavaScript
+        var data = [];
+        for (var i = 0; i < 1000; i++) {
+            data.push({
+                id: i,
+                name: 'Item ' + i,
+                value: Math.random() * 1000
+            });
+        }
+        console.log(data);
+    </script>
+</body>
+
+</html>
