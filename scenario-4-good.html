@@ -13,7 +13,7 @@
     <link rel="canonical" href="https://example.com/scenarios/scenario-4-good.html">
 
     <!-- GOOD LCP: Preload hero image for faster LCP -->
-    <link rel="preload" as="image" href="../SEO-BANNER.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="SEO-BANNER.webp" type="image/webp" fetchpriority="high">
 
     <!-- GOOD CWV: Preconnect for fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -143,9 +143,9 @@
     </style>
 
     <!-- GOOD CWV: Non-critical CSS loaded async -->
-    <link rel="preload" href="../style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="style.css">
     </noscript>
 </head>
 
@@ -154,15 +154,15 @@
         <nav style="max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;">
             <a href="/" style="color:white;font-size:24px;font-weight:700;text-decoration:none;">SEO Learn</a>
             <ul style="display:flex;gap:20px;list-style:none;">
-                <li><a href="../index.html" style="color:white;text-decoration:none;">Ana Sayfa</a></li>
-                <li><a href="../hizmetler.html" style="color:white;text-decoration:none;">Hizmetler</a></li>
-                <li><a href="../iletisim.html" style="color:white;text-decoration:none;">İletişim</a></li>
+                <li><a href="index.html" style="color:white;text-decoration:none;">Ana Sayfa</a></li>
+                <li><a href="hizmetler.html" style="color:white;text-decoration:none;">Hizmetler</a></li>
+                <li><a href="iletisim.html" style="color:white;text-decoration:none;">İletişim</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- GOOD LCP: Optimized hero with preloaded WebP image -->
-    <section class="hero" style="background-image: url('../SEO-BANNER.webp');">
+    <section class="hero" style="background-image: url('SEO-BANNER.webp');">
         <div class="hero-content">
             <h1>Ürünlerimizi Keşfedin</h1>
             <p>En iyi fiyatlarla kaliteli ürünler</p>
@@ -179,8 +179,8 @@
             <article class="card">
                 <div class="card-image">
                     <picture>
-                        <source srcset="../SEO-BANNER.webp" type="image/webp">
-                        <img src="../seo_banner.png" alt="Ürün 1 - SEO optimizasyon aracı" width="400" height="225"
+                        <source srcset="SEO-BANNER.webp" type="image/webp">
+                        <img src="seo_banner.png" alt="Ürün 1 - SEO optimizasyon aracı" width="400" height="225"
                             loading="eager" decoding="async">
                     </picture>
                 </div>
@@ -194,8 +194,8 @@
             <article class="card">
                 <div class="card-image">
                     <picture>
-                        <source srcset="../SEO-BANNER.webp" type="image/webp">
-                        <img src="../seo_banner.png" alt="Ürün 2 - Keyword analiz aracı" width="400" height="225"
+                        <source srcset="SEO-BANNER.webp" type="image/webp">
+                        <img src="seo_banner.png" alt="Ürün 2 - Keyword analiz aracı" width="400" height="225"
                             loading="lazy" decoding="async">
                     </picture>
                 </div>
@@ -209,8 +209,8 @@
             <article class="card">
                 <div class="card-image">
                     <picture>
-                        <source srcset="../SEO-BANNER.webp" type="image/webp">
-                        <img src="../seo_banner.png" alt="Ürün 3 - Backlink izleme aracı" width="400" height="225"
+                        <source srcset="SEO-BANNER.webp" type="image/webp">
+                        <img src="seo_banner.png" alt="Ürün 3 - Backlink izleme aracı" width="400" height="225"
                             loading="lazy" decoding="async">
                     </picture>
                 </div>
@@ -224,8 +224,8 @@
             <article class="card">
                 <div class="card-image">
                     <picture>
-                        <source srcset="../SEO-BANNER.webp" type="image/webp">
-                        <img src="../seo_banner.png" alt="Ürün 4 - Rakip analiz aracı" width="400" height="225"
+                        <source srcset="SEO-BANNER.webp" type="image/webp">
+                        <img src="seo_banner.png" alt="Ürün 4 - Rakip analiz aracı" width="400" height="225"
                             loading="lazy" decoding="async">
                     </picture>
                 </div>
@@ -239,8 +239,8 @@
             <article class="card">
                 <div class="card-image">
                     <picture>
-                        <source srcset="../SEO-BANNER.webp" type="image/webp">
-                        <img src="../seo_banner.png" alt="Ürün 5 - İçerik optimizasyon aracı" width="400" height="225"
+                        <source srcset="SEO-BANNER.webp" type="image/webp">
+                        <img src="seo_banner.png" alt="Ürün 5 - İçerik optimizasyon aracı" width="400" height="225"
                             loading="lazy" decoding="async">
                     </picture>
                 </div>
@@ -254,8 +254,8 @@
             <article class="card">
                 <div class="card-image">
                     <picture>
-                        <source srcset="../SEO-BANNER.webp" type="image/webp">
-                        <img src="../seo_banner.png" alt="Ürün 6 - Teknik SEO denetim aracı" width="400" height="225"
+                        <source srcset="SEO-BANNER.webp" type="image/webp">
+                        <img src="seo_banner.png" alt="Ürün 6 - Teknik SEO denetim aracı" width="400" height="225"
                             loading="lazy" decoding="async">
                     </picture>
                 </div>
@@ -294,7 +294,7 @@
             if (e.target.id === 'get-started-btn') {
                 // Lightweight handler - no heavy computation
                 console.log('Get started clicked');
-                window.location.href = '../hizmetler.html';
+                window.location.href = 'hizmetler.html';
             }
 
             // Handle buy buttons with data attribute
